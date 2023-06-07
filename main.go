@@ -9,26 +9,26 @@ type Titles struct {
 	LastYears         string
 }
 
-func earlyYears(titles Titles) string {
+func (t Titles) earlyYears() string {
 
-	return titles.EarlyYears
+	return t.EarlyYears
 }
 
-func civilWar(titles Titles) string {
-	return titles.DuringTheCivilWar
+func (t Titles) civilWar() string {
+	return t.DuringTheCivilWar
 
 }
 
-func writersWork(titles Titles) string {
-	return titles.WritersWork
+func (t Titles) writersWork() string {
+	return t.WritersWork
 }
 
-func lastYears(titles Titles) string {
-	return titles.LastYears
+func (t Titles) lastYears() string {
+	return t.LastYears
 }
 
 func main() {
-	titles := Titles{
+	t := Titles{
 		EarlyYears: "\nThe future classic of American literature was born in 1835 in the village of Florida (Missouri). " +
 			"The father died when the boy was 13 years old, the mother lived a long life and died at the age of 87. " +
 			"In addition to Sam, the family had 3 more children: two boys and a girl. After the death of his father, Sam's older brother Orion became the head of the family." +
@@ -53,12 +53,9 @@ func main() {
 			"He died in 1910 from an attack of angina pectoris. It is known that he was born in the year when Halley's comet passed over the earth, he also “left” with it, since in 1910 it again passed by the Earth (by the way, the writer actually predicted his death).\n",
 	}
 
-	title1 := earlyYears(titles)
-	title2 := civilWar(titles)
-	title3 := writersWork(titles)
-	title4 := lastYears(titles)
-
-	fmt.Println(title1, title2, title3, title4)
+	fmt.Println(t.earlyYears())
+	fmt.Println(t.civilWar())
+	fmt.Println(t.writersWork())
+	fmt.Println(t.lastYears())
 
 }
-
